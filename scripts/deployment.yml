@@ -15,7 +15,7 @@ spec:
       containers:
       - name: book-catalog
         image: sit722part3.azurecr.io/book-catalog:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         env:
         - name: PORT
           value: "8000"
@@ -52,7 +52,7 @@ spec:
       containers:
       - name: inventory-management
         image: sit722part3.azurecr.io/inventory-management:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         ports:
         - containerPort: 8001
         env:
