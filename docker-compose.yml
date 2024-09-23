@@ -2,7 +2,7 @@ version: '3'
 services:
 
   book-catalog:
-    image: book-catalog
+    image: book_catalog:latest
     build: 
       context: ./book_catalog
       dockerfile: Dockerfile
@@ -15,7 +15,7 @@ services:
     restart: "no"
 
   inventory-management:
-    image: inventory-management
+    image: inventory_management:latest
     build: 
       context: ./inventory_management
       dockerfile: Dockerfile
