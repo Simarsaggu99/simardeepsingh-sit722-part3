@@ -32,7 +32,7 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 8088
+      port: 8000
       targetPort: 8000
 ---
 apiVersion: apps/v1
@@ -71,5 +71,5 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 8089
+      port: 8001
       targetPort: 8001
