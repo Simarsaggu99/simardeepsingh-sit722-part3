@@ -15,7 +15,7 @@ spec:
       containers:
         - name: book-catalog
           image: sit722part3.azurecr.io/book_cat:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
@@ -23,6 +23,7 @@ spec:
               value: "80"
             - name: DATABASE_URL
               value: postgresql://sit722part3_ej22_user:MfKbzju6x8WwCEFSPtm3u1VLALLS8Cjh@dpg-crok5723esus73c2ajog-a.oregon-postgres.render.com/sit722part3_ej22
+---  
 apiVersion: v1
 kind: Service
 metadata:
@@ -48,12 +49,13 @@ spec:
   template:
     metadata:
       labels:
+
         app: inventory-management
     spec:
       containers:
         - name: inventory-management
           image: sit722part3.azurecr.io/management_invent:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 81
           env:
