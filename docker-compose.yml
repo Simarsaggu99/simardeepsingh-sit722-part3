@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  book_catalog:
+    build:
+      context: ./book_catalog
+    ports:
+      - "8000:8000"
+    environment:
+      # Set the external PostgreSQL connection string for book_catalog microservice
+      - DATABASE_URL=postgresql://githubtask_user:WAVgNNbOpSrFh8udGw8ajreXsk49ba9F@dpg-cre0i7ggph6c73el8r90-a.oregon-postgres.render.com:5432/githubtask
+
+  inventory_management:
+    build:
+      context: ./inventory_management
+    ports:
+      - "8001:8001"
+    environment:
+      # Set the external PostgreSQL connection string for inventory_management microservice
+      - DATABASE_URL=postgresql://githubtask_user:WAVgNNbOpSrFh8udGw8ajreXsk49ba9F@dpg-cre0i7ggph6c73el8r90-a.oregon-postgres.render.com:5432/githubtask
