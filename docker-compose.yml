@@ -1,20 +1,37 @@
-version: '3.8'
+# version of  Docker Compose file
+version: "3.8"
 
 services:
-  book_catalog:
+  # book_catalog service
+  book_cat:
+  
     build:
-      context: ./book_catalog
-    ports:
-      - "8000:8000"
-    environment:
-      # Set the external PostgreSQL connection string for book_catalog microservice
-      - DATABASE_URL=postgresql://githubtask_user:WAVgNNbOpSrFh8udGw8ajreXsk49ba9F@dpg-cre0i7ggph6c73el8r90-a.oregon-postgres.render.com:5432/githubtask
 
-  inventory_management:
-    build:
-      context: ./inventory_management
+      context: ./book_catalog
+
+      dockerfile: Dockerfile
+
     ports:
-      - "8001:8001"
+      - "80:80"
+    # environment variables for the container
     environment:
-      # Set the external PostgreSQL connection string for inventory_management microservice
-      - DATABASE_URL=postgresql://githubtask_user:WAVgNNbOpSrFh8udGw8ajreXsk49ba9F@dpg-cre0i7ggph6c73el8r90-a.oregon-postgres.render.com:5432/githubtask
+      # DATABASE_URL environment variable for the PostgreSQL connection
+      - DATABASE_URL=postgresql://book_cat_user:a4DIpcnKXM1ixU77QBXs8l96GxoG8c1z@dpg-crlqm6bv2p9s73e2ss00-a.oregon-postgres.render.com/book_cat
+
+    
+
+  # Define the inventory_management service
+  management_invent:
+   
+    build:
+   
+      context: ./inventory_management
+
+      dockerfile: Dockerfile
+   
+    ports:
+      - "81:81"
+    # Define environment variables for container
+    environment:
+      - DATABASE_URL=postgresql://book_cat_user:a4DIpcnKXM1ixU77QBXs8l96GxoG8c1z@dpg-crlqm6bv2p9s73e2ss00-a.oregon-postgres.render.com/book_cat
+   
