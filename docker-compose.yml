@@ -16,7 +16,7 @@ services:
     # environment variables for the container
     environment:
       # DATABASE_URL environment variable for the PostgreSQL connection
-      - DATABASE_URL=postgresql://book_cat_user:a4DIpcnKXM1ixU77QBXs8l96GxoG8c1z@dpg-crlqm6bv2p9s73e2ss00-a.oregon-postgres.render.com/book_cat
+      - DATABASE_URL=postgresql://sit722part3_ej22_user:MfKbzju6x8WwCEFSPtm3u1VLALLS8Cjh@dpg-crok5723esus73c2ajog-a.oregon-postgres.render.com/sit722part3_ej22
 
     
 
@@ -33,5 +33,4 @@ services:
       - "81:81"
     # Define environment variables for container
     environment:
-      - DATABASE_URL=postgresql://book_cat_user:a4DIpcnKXM1ixU77QBXs8l96GxoG8c1z@dpg-crlqm6bv2p9s73e2ss00-a.oregon-postgres.render.com/book_cat
-   
+      - DATABASE_URL=postgresql://sit722part3_ej22_user:MfKbzju6x8WwCEFSPtm3u1VLALLS8Cjh@dpg-crok5723esus73c2ajog-a.oregon-postgres.render.com/sit722part3_ej22
